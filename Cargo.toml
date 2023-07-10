@@ -1,0 +1,19 @@
+[package]
+name = "swc-plugin-preeval"
+version = "0.1.0"
+edition = "2021"
+authors = ["OJ Kwon <kwon.ohjoong@gmail.com>"]
+description = "A swc plugin runs compile time evaluation"
+repository = "https://github.com/kwonoj/swc-plugin-preeval"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+swc_core = { version = "0.79.14", features = [
+  "ecma_ast",
+  "ecma_parser",
+  "ecma_codegen",
+  "ecma_plugin_transform"
+  ] }
+boa_engine = { version = "0.17.0" }
